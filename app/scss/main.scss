@@ -237,16 +237,16 @@ body {
   content: "";
   display: inline-block;
   width: 32px;
-  height: 20px;
+  height: 32px;
   flex-shrink: 0;
   flex-grow: 0;
   margin-right: 0.5em;
-  background: url("../images/dest/checkboxoff.png") no-repeat center;
+  background: url("../images/dest/switch--off.svg") no-repeat center;
   cursor: pointer;
 }
 
 .exchange__checkbox:checked + label::before {
-  background: url("../images/dest/checkboxon.png") no-repeat center;
+  background: url("../images/dest/switch.svg") no-repeat center;
 }
 
 .exchange__table__head__arrow {

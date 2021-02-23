@@ -145,10 +145,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Открыть/закрыть форму
   const openFormBtn = document.querySelector("#openForm");
   const form = document.querySelector("#recallForm");
-  openFormBtn.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    form.classList.toggle("exchange__recall__form--active");
-  });
+  if (openFormBtn) {
+    openFormBtn.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      form.classList.toggle("exchange__recall__form--active");
+    });
+  }
 
   // Отзывы вкладки
   const recallPannelItems = document.querySelectorAll(
@@ -174,14 +176,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const recallItemsOpen = document.querySelectorAll(
     ".exchange__recall__item__open"
   );
-  recallItemsOpen.forEach((recallItemOpen) => {
-    recallItemOpen.addEventListener("click", (evt) => {
-      evt.preventDefault();
-      const currReview = findAncestor(recallItemOpen, "exchange__recall__item");
-      const currRecallItemForm = currReview.querySelector(
-        ".exchange__recall__form--small"
-      );
-      currRecallItemForm.classList.toggle("exchange__recall__form--active");
+  if (recallItemsOpen) {
+    recallItemsOpen.forEach((recallItemOpen) => {
+      recallItemOpen.addEventListener("click", (evt) => {
+        evt.preventDefault();
+        const currReview = findAncestor(
+          recallItemOpen,
+          "exchange__recall__item"
+        );
+        const currRecallItemForm = currReview.querySelector(
+          ".exchange__recall__form--small"
+        );
+        currRecallItemForm.classList.toggle("exchange__recall__form--active");
+      });
     });
-  });
+  }
 });
